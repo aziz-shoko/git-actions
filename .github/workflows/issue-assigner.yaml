@@ -10,5 +10,15 @@ jobs:
       uses: pozil/auto-assign-issue@v1.0.3
       with: 
         repo-token: ${{ .secrets.GITHUB_TOKEN }}
-        assignees: testesdapri
+        assignees: somegituser
     
+# The Issue assignment workflow will run every time an issue is opened.
+# This will trigger a job called auto-assign, which will run on the latest version of Ubuntu, running on a GitHub-hosted runner.
+# The step within the job will use an action called Auto-assign issue, which can be found in GitHub Marketplace.
+# This step will use a repository token (GITHUB_TOKEN), which is automatically created when GitHub Actions are enabled in a repository. 
+# Finally, the job will assign an assignee – in this case, somegituser – to the newly created issue.
+
+# Note how this workflow uses pozil/auto-assign-issue@v1.0.3.
+# This is an action that was published by user pozil in GitHub Marketplace. 
+# The GitHub Actions community creates, publishes, and shares actions on GitHub by making them available in GitHub Marketplace,
+# which you can use to find existing actions and incorporate them into your workflows.
